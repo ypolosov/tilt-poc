@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "attach",
+        "name": "Attach to Node",
+        "port": 9229,
+        "address": "localhost",
+        "localRoot": "${workspaceFolder}/tilt-example-nodejs/101-debugger",
+        "remoteRoot": "/app", // Adjust according to your app directory in the container
+        "skipFiles": ["<node_internals>/**"],
+        "restart": true
+      }
+    ]
+  }
