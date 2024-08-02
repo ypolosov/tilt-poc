@@ -12,13 +12,15 @@
 		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
 		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
 		"ghcr.io/rio/features/k9s:1": {},
-		"./features/tilt": {}
+		"ghcr.io/audacioustux/devcontainers/tilt:1": {}
+		// "./features/tilt": {}
 	},
 	"overrideFeatureInstallOrder": [
 		"ghcr.io/devcontainers/features/docker-outside-of-docker",
 		"ghcr.io/devcontainers/features/kubectl-helm-minikube",
 		"ghcr.io/rio/features/k9s",
-		"./features/tilt"
+		"ghcr.io/audacioustux/devcontainers/tilt"
+		// "./features/tilt"
 	],
 	"mounts": [
 		{
@@ -27,14 +29,15 @@
 			"type": "volume"
 		},
 		{
-			"source": "${env:HOME}/.kube",
+			// "source": "${env:HOME}/.kube",
+			"source": "${localEnv:HOME}${localEnv:USERPROFILE}/.kube",
 			"target": "/home/node/.kube",
 			"type": "bind"
 		}
 	],
-	"remoteEnv": {
-		"HOST_HOME": "${env:HOME}"
-	},
+	// "remoteEnv": {
+	// 	"HOST_HOME": "${env:HOME}"
+	// },
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -47,5 +50,5 @@
 			]
 		}
 	},
-	"remoteUser": "node"
+	// "remoteUser": "node"
 }
